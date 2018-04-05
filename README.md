@@ -2,9 +2,9 @@
 
 ## Example
 ```
-docker pull hmbsbige/shadowsocksr-docker:0.1
-docker run -d -p 80:80 -e "PASSWORD=lajigugu"  hmbsbige/shadowsocksr-docker:0.1
-docker run -d -p 443:80 -e "PASSWORD=lajigugu" -e "PROTOCOL=auth_chain_a" hmbsbige/shadowsocksr-docker:0.1
+docker pull hmbsbige/shadowsocksr-docker:latest
+docker run -d -p 80:80 -e "PASSWORD=lajigugu"  hmbsbige/shadowsocksr-docker:latest
+docker run -d -p 465:80 -e "PASSWORD=lajigugu" -e "METHOD=chacha20" -e "PROTOCOL=origin" hmbsbige/shadowsocksr-docker:latest
 ```
 
 ## 默认参数
@@ -18,4 +18,6 @@ ENV PROTOCOLPARAM   32
 ENV OBFS            tls1.2_ticket_auth_compatible
 ENV TIMEOUT         300
 ENV WORKERS         1
+ENV DNS_ADDR        1.1.1.1
+ENV DNS_ADDR_2      8.8.8.8
 ```
