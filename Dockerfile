@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine
 
 ENV SERVER_ADDR     0.0.0.0
 ENV SERVER_PORT     80
@@ -9,8 +9,6 @@ ENV PROTOCOLPARAM   32
 ENV OBFS            tls1.2_ticket_auth_compatible
 ENV TIMEOUT         300
 ENV WORKERS         1
-ENV DNS_ADDR        1.1.1.1
-ENV DNS_ADDR_2      8.8.8.8
 
 ARG BRANCH=manyuser
 ARG WORK=~
