@@ -1,15 +1,5 @@
 FROM alpine
 
-ENV SERVER_ADDR     0.0.0.0
-ENV SERVER_PORT     80
-ENV PASSWORD        psw
-ENV METHOD          none
-ENV PROTOCOL        auth_chain_d
-ENV PROTOCOLPARAM   32
-ENV OBFS            tls1.2_ticket_auth_compatible
-ENV TIMEOUT         300
-ENV WORKERS         1
-
 ARG BRANCH=manyuser
 ARG WORK=~
 
@@ -25,6 +15,4 @@ RUN mkdir -p $WORK && \
 
 WORKDIR $WORK/shadowsocksr-$BRANCH/shadowsocks
 
-
-EXPOSE $SERVER_PORT
-CMD python server.py -s $SERVER_ADDR -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OBFS -G $PROTOCOLPARAM -t $TIMEOUT --fast-open --workers $WORKERS
+ENTRYPOINT ["python", "server.py"]
