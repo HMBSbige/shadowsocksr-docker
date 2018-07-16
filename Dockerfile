@@ -15,4 +15,4 @@ RUN mkdir -p $WORK && \
 
 WORKDIR $WORK/shadowsocksr-$BRANCH/shadowsocks
 
-ENTRYPOINT ["python", "server.py"]
+ENTRYPOINT ["python", "local.py"]
